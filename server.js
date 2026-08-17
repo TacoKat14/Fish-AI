@@ -5,7 +5,9 @@ const cors = require("cors");
 
 const app = express();
 
-const PORT = 3000;
+// Render provides PORT automatically.
+// 3000 is used when running locally.
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
@@ -37,17 +39,14 @@ app.post("/chat", async (req, res) => {
         const response = await fetch(
             "https://openrouter.ai/api/v1/chat/completions",
             {
-
                 method: "POST",
 
                 headers: {
-
                     "Authorization":
                         `Bearer ${process.env.OPENROUTER_API_KEY}`,
 
                     "Content-Type":
                         "application/json"
-
                 },
 
                 body: JSON.stringify({
@@ -72,7 +71,6 @@ app.post("/chat", async (req, res) => {
                     ]
 
                 })
-
             }
         );
 
@@ -108,7 +106,6 @@ app.post("/chat", async (req, res) => {
         const data =
             await response.json();
 
-
         const reply =
             data.choices?.[0]?.message?.content;
 
@@ -135,11 +132,8 @@ app.post("/chat", async (req, res) => {
         // =========================
 
         res.json({
-
             reply: reply
-
         });
-
 
     } catch (error) {
 
@@ -147,7 +141,6 @@ app.post("/chat", async (req, res) => {
             "Server error:",
             error
         );
-
 
         res.status(500).json({
 
@@ -183,7 +176,7 @@ app.listen(
     () => {
 
         console.log(
-            `🎣 FishAI running at http://localhost:${PORT}`
+            `🎣 FishAI running on port ${PORT}`
         );
 
     }
