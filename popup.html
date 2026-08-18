@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FishAI</title>
+
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- Ambient background -->
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+    <!-- HEADER -->
+    <header>
+
+        <div class="brand">
+
+            <div class="logo">
+                <img src="icon.png" alt="FishAI">
+            </div>
+
+            <div>
+                <h1>FishAI</h1>
+                <p>Your AI fishing companion</p>
+            </div>
+
+        </div>
+
+        <button
+            id="settingsButton"
+            class="icon-button"
+            title="Settings"
+            type="button"
+        >
+            ⚙
+        </button>
+
+    </header>
+
+
+    <!-- STATUS -->
+    <div class="status">
+
+        <span class="status-dot"></span>
+
+        <span>FishAI Online</span>
+
+    </div>
+
+
+    <!-- CHAT -->
+    <main id="chat">
+
+        <div class="message ai">
+
+            <div class="avatar">
+                🐟
+            </div>
+
+            <div class="bubble">
+
+                <div class="bubble-name">
+                    FishAI
+                </div>
+
+                <div class="bubble-text">
+                    G'day! 🎣
+                    <br><br>
+                    I'm your AI fishing companion. Ask me about bait, lures, rigs, techniques, species or fishing spots.
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- SETTINGS -->
+    <div
+        id="settingsPanel"
+        class="settings-panel"
+    >
+
+        <div class="settings-top">
+
+            <div>
+                <span class="settings-small">
+                    FISH AI
+                </span>
+
+                <h2>Settings</h2>
+            </div>
+
+            <button
+                id="closeSettings"
+                type="button"
+            >
+                ✕
+            </button>
+
+        </div>
+
+
+        <div class="settings-card">
+
+            <div class="setting-title">
+                Appearance
+            </div>
+
+
+            <!-- THEME -->
+
+            <div class="setting">
+
+                <div>
+                    <strong>Theme</strong>
+                    <small>Change FishAI's appearance</small>
+                </div>
+
+                <select id="themeSelect">
+
+                    <option value="light">
+                        ☀️ Light
+                    </option>
+
+                    <option value="dark">
+                        🌙 Dark
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- BACKGROUND -->
+
+            <div class="setting">
+
+                <div>
+                    <strong>Water</strong>
+                    <small>Choose your environment</small>
+                </div>
+
+                <select id="backgroundSelect">
+
+                    <option value="ocean">
+                        🌊 Ocean
+                    </option>
+
+                    <option value="deepsea">
+                        🌌 Deep Sea
+                    </option>
+
+                    <option value="tropical">
+                        🏝️ Tropical
+                    </option>
+
+                    <option value="river">
+                        🌲 River
+                    </option>
+
+                    <option value="minimal">
+                        ⚪ Minimal
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- INPUT -->
+
+    <div class="input-area">
+
+        <div class="input-box">
+
+            <input
+                id="messageInput"
+                type="text"
+                placeholder="Ask FishAI anything..."
+                autocomplete="off"
+            >
+
+            <button
+                id="sendButton"
+                type="button"
+                title="Send"
+                aria-label="Send message"
+            >
+                <img src="icon.png" alt="">
+            </button>
+
+        </div>
+
+        <div class="input-hint">
+            Press Enter to send
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="popup.js"></script>
+
+</body>
+</html>
