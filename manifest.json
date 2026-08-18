@@ -3,7 +3,6 @@
   "name": "FishAI",
   "version": "1.0.0",
   "description": "Your AI Fishing Assistant.",
-
   "action": {
     "default_popup": "popup.html",
     "default_title": "FishAI",
@@ -14,16 +13,13 @@
       "128": "icon.png"
     }
   },
-
   "icons": {
     "16": "icon.png",
     "32": "icon.png",
     "48": "icon.png",
     "128": "icon.png"
   },
-
   "permissions": [],
-
   "host_permissions": [
     "https://fish-ai-xpox.onrender.com/*"
   ]
